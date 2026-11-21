@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Becoming an Agentic-AI-First Organization</title>
+<style>
+  :root {
+    --navy: #1F3864;
+    --blue: #2E75B6;
+    --blue-tint: #E3ECF7;
+    --ink: #222222;
+    --quiet: #44546A;
+    --rule: #C9D3E0;
+    --bg: #FFFFFF;
+    --panel: #EEF2F7;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  header {
+    background: var(--navy);
+    border-bottom: 6px solid var(--blue);
+    color: #fff;
+    padding: 48px 16px 40px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { padding: 0; max-width: 868px; }
+  header .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: #BFD3EA; margin: 0 0 10px; }
+  header h1 { margin: 0 0 12px; font-size: 34px; line-height: 1.2; }
+  header p.lede { margin: 0; font-size: 17px; color: #E3ECF6; max-width: 720px; }
+  header .meta { margin-top: 18px; font-size: 13px; color: #BFD3EA; }
+  nav.toc {
+    background: #fff;
+    border-bottom: 3px solid var(--blue);
+    position: sticky; top: 0; z-index: 5;
+  }
+  nav.toc ol {
+    list-style: none; margin: 0 auto; padding: 10px 16px;
+    max-width: 900px; display: flex; flex-wrap: wrap; gap: 4px 18px;
+    font-size: 13px;
+  }
+  nav.toc a { color: var(--navy); text-decoration: none; }
+  nav.toc a:hover { color: var(--blue); text-decoration: underline; }
+  main { padding: 24px 0 64px; }
+  section { padding-top: 28px; }
+  h2 {
+    color: var(--navy); font-size: 24px; margin: 0 0 12px;
+    padding-bottom: 8px; border-bottom: 3px solid var(--navy);
+  }
+  h3 { color: var(--blue); font-size: 17px; margin: 24px 0 8px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--blue); }
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  .callout {
+    background: var(--blue-tint); border-left: 4px solid var(--blue);
+    padding: 14px 18px; margin: 18px 0; border-radius: 0;
+  }
+  figure { margin: 22px 0 18px; border: 1px solid var(--rule); border-top: 4px solid var(--navy); background: #fff; padding: 14px 14px 0; }
+  figure svg { width: 100%; height: auto; display: block; }
+  figcaption { font-size: 13px; color: var(--quiet); margin: 10px -14px 0; padding: 8px 14px; background: var(--panel); border-top: 1px solid var(--rule); }
+  .table-scroll { overflow-x: auto; margin: 14px 0 18px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+  th { background: var(--navy); color: #fff; font-weight: 600; }
+  tr:nth-child(even) td { background: var(--panel); }
+  td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .plan { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0 18px; }
+  .plan div { border: 1px solid var(--rule); border-top: 4px solid var(--blue); border-radius: 2px; padding: 12px 14px; background: #fff; }
+  .plan h4 { margin: 0 0 6px; color: var(--navy); font-size: 15px; }
+  .plan p { margin: 0; font-size: 14.5px; }
+  pre { background: #0F1F38; color: #E3ECF6; padding: 14px 16px; border-radius: 2px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin: 12px 0 16px; }
+  code { font-family: Consolas, Menlo, monospace; font-size: 0.92em; }
+  p code, li code { background: var(--panel); padding: 1px 5px; border-radius: 3px; color: var(--navy); }
+  .roles td:first-child { white-space: normal; }
+  .roles td { font-size: 14px; }
+  .refs h3 { margin-top: 18px; }
+  .refs li { font-size: 14.5px; }
+  footer { border-top: 1px solid var(--rule); padding: 18px 0 40px; font-size: 13px; color: var(--quiet); }
+  @media (max-width: 700px) {
+    header h1 { font-size: 26px; }
+    .plan { grid-template-columns: 1fr; }
+    td:first-child { white-space: normal; }
+  }
+  @media print {
+    nav.toc { display: none; }
+    header { padding: 24px 16px; }
+    section { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Transformation guide</p>
+    <h1>Becoming an Agentic-AI-First Organization</h1>
+    <p class="lede">A brief guide to redesigning work, platforms, governance and roles so that AI agents run workflows end to end, with people setting goals and owning outcomes.</p>
+    <p class="meta">November 21, 2026</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <ol>
+    <li><a href="#what">1. What it means</a></li>
+    <li><a href="#maturity">2. Maturity model</a></li>
+    <li><a href="#roadmap">3. Roadmap</a></li>
+    <li><a href="#architecture">4. Architecture</a></li>
+    <li><a href="#technical">5. Technical deep dive</a></li>
+    <li><a href="#governance">6. Governance</a></li>
+    <li><a href="#people">7. Roles and operating model</a></li>
+    <li><a href="#metrics">8. Metrics and 90 days</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section id="what">
+  <h2>1. What agentic-AI-first means</h2>
+  <p>An agentic-AI-first organization designs work so that AI agents plan, act and complete multi-step tasks by default, with people setting goals, approving consequential decisions and owning outcomes. The shift is from AI as a tool someone opens to AI as a colleague that runs workflows end to end.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 352" role="img" aria-label="The shift: from AI as a tool people use to agents that run the work" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">The shift: from AI as a tool people use to agents that run the work</text>
+      <text x="28" y="64" font-weight="700" fill="#44546A" letter-spacing="1">AI-ASSISTED TODAY</text>
+      <text x="28" y="216" font-weight="700" fill="#44546A" letter-spacing="1">AGENTIC-AI-FIRST</text>
+      <g fill="none" stroke="#2E75B6" stroke-width="1.25"><path d="M184 114H212" marker-end="url(#a7)"/><path d="M368 114H396" marker-end="url(#a7)"/><path d="M552 114H580" marker-end="url(#a7)"/><path d="M184 266H212" marker-end="url(#a7)"/><path d="M552 266H580" marker-end="url(#a7)"/></g>
+      <rect x="28" y="76" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="102" font-size="13" font-weight="700" fill="#1F3864">Person</text><text x="42" y="122" fill="#222222">does every step,</text><text x="42" y="138" fill="#222222">holds all context</text>
+      <rect x="212" y="76" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="226" y="102" font-size="13" font-weight="700" fill="#1F3864">AI assistant</text><text x="226" y="122" fill="#222222">drafts text or</text><text x="226" y="138" fill="#222222">answers a question</text>
+      <rect x="396" y="76" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="410" y="102" font-size="13" font-weight="700" fill="#1F3864">Person again</text><text x="410" y="122" fill="#222222">re-keys output</text><text x="410" y="138" fill="#222222">into each system</text>
+      <rect x="580" y="76" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="594" y="102" font-size="13" font-weight="700" fill="#1F3864">Handoff</text><text x="594" y="122" fill="#222222">next team picks up,</text><text x="594" y="138" fill="#222222">work waits in queues</text>
+      <text x="28" y="176" fill="#44546A">People are the integration layer: every step waits on a person</text>
+      <rect x="28" y="228" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="254" font-size="13" font-weight="700" fill="#1F3864">Person</text><text x="42" y="274" fill="#222222">sets the goal and</text><text x="42" y="290" fill="#222222">the constraints</text>
+      <rect x="212" y="228" width="340" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="226" y="254" font-size="13" font-weight="700" fill="#1F3864">Agents plan and execute</text><text x="226" y="274" fill="#222222">across systems, tools and data, end to end</text><text x="226" y="290" fill="#222222">within policy and their autonomy tier</text>
+      <rect x="580" y="228" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="594" y="254" font-size="13" font-weight="700" fill="#1F3864">Person</text><text x="594" y="274" fill="#222222">reviews exceptions,</text><text x="594" y="290" fill="#222222">owns the outcome</text>
+      <text x="28" y="328" fill="#44546A">Agents are the integration layer: people set direction and judge results</text>
+      </svg>
+    <figcaption>Figure 1. Before and after: who is the integration layer.</figcaption>
+  </figure>
+  <p>Three things distinguish it from "using AI":</p>
+  <ul>
+    <li><strong>Work is redesigned, not augmented.</strong> Processes are rebuilt around what agents do well (speed, parallelism, tireless follow-through) instead of bolting a chatbot onto the old process.</li>
+    <li><strong>Agents have identity, tools and permissions.</strong> Each agent is a governed workload with scoped access to systems, data and APIs, not an anonymous prompt.</li>
+    <li><strong>Humans move up the stack.</strong> People become designers, supervisors and approvers of agent work, accountable for quality and risk.</li>
+  </ul>
+  <p>Why now: models can reliably run long, tool-using tasks; open protocols such as MCP make connecting agents to enterprise systems routine; and the cost of a unit of knowledge work done by an agent keeps falling. Organizations that redesign early compound the advantage.</p>
+  <div class="callout">
+    <p><strong>The gap is organizational.</strong> In McKinsey's 2026 state of AI survey, 80% of respondents report better individual productivity from AI, yet only 37% report positive EBIT impact and 6% qualify as AI high performers <a href="#ref2">[2]</a>. Gartner forecasts that over 40% of agentic AI projects will be canceled by the end of 2027 due to rising costs, unclear value or weak risk controls, while expecting 15% of day-to-day work decisions to be made autonomously by 2028 <a href="#ref4">[4]</a>.</p>
+    <p style="margin:0">Winning requires redesigning the organization, not just deploying agents.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="maturity">
+  <h2>2. Maturity model</h2>
+  <p>Most organizations today sit at Stage 1 or 2. Agentic-AI-first means reaching Stage 3 broadly and Stage 4 in your core value streams.</p>
+  <figure>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-label="Autonomy rises as platform, controls and work redesign mature" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">Autonomy rises as platform, controls and work redesign mature</text>
+      <path d="M28 152V144H372V152" fill="none" stroke="#44546A"/>
+      <text x="28" y="136" fill="#44546A">Where most organizations are today</text>
+      <!-- stage 1 -->
+      <rect x="28" y="200" width="164" height="156" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+      <line x1="44" y1="310" x2="176" y2="310" stroke="#C9D3E0"/>
+      <text x="44" y="222" fill="#44546A">Stage 1</text>
+      <text x="44" y="242" font-size="13" font-weight="700" fill="#1F3864">Assisted</text>
+      <text x="44" y="264" fill="#222222">Copilots help people</text>
+      <text x="44" y="280" fill="#222222">Humans do the work</text>
+      <text x="44" y="296" fill="#222222">Ad hoc tools</text>
+      <text x="44" y="330" fill="#44546A">Key control</text>
+      <text x="44" y="346" fill="#222222">Acceptable-use policy</text>
+      <!-- stage 2 -->
+      <rect x="208" y="160" width="164" height="196" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+      <line x1="224" y1="270" x2="356" y2="270" stroke="#C9D3E0"/>
+      <text x="224" y="182" fill="#44546A">Stage 2</text>
+      <text x="224" y="202" font-size="13" font-weight="700" fill="#1F3864">Delegated</text>
+      <text x="224" y="224" fill="#222222">Agents run tasks</text>
+      <text x="224" y="240" fill="#222222">Humans approve each</text>
+      <text x="224" y="256" fill="#222222">First guardrails</text>
+      <text x="224" y="290" fill="#44546A">Key control</text>
+      <text x="224" y="306" fill="#222222">Approvals and logging</text>
+      <!-- stage 3 -->
+      <rect x="388" y="120" width="164" height="236" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+      <line x1="404" y1="230" x2="536" y2="230" stroke="#C9D3E0"/>
+      <text x="404" y="142" fill="#44546A">Stage 3</text>
+      <text x="404" y="162" font-size="13" font-weight="700" fill="#1F3864">Orchestrated</text>
+      <text x="404" y="184" fill="#222222">Agents run workflows</text>
+      <text x="404" y="200" fill="#222222">Humans own exceptions</text>
+      <text x="404" y="216" fill="#222222">Shared agent platform</text>
+      <text x="404" y="250" fill="#44546A">Key control</text>
+      <text x="404" y="266" fill="#222222">Agent identity, sandbox</text>
+      <!-- stage 4 -->
+      <rect x="568" y="80" width="164" height="276" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/>
+      <line x1="584" y1="190" x2="716" y2="190" stroke="#BFD3EA"/>
+      <text x="584" y="102" fill="#44546A">Stage 4</text>
+      <text x="584" y="122" font-size="13" font-weight="700" fill="#1F3864">Agent-native</text>
+      <text x="584" y="144" fill="#222222">Work built for agents</text>
+      <text x="584" y="160" fill="#222222">Humans set goals</text>
+      <text x="584" y="176" fill="#222222">Workflows self-improve</text>
+      <text x="584" y="210" fill="#44546A">Key control</text>
+      <text x="584" y="226" fill="#222222">Real-time governance</text>
+      <line x1="28" y1="378" x2="730" y2="378" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a1)"/>
+      <text x="28" y="400" fill="#44546A">Increasing agent autonomy, trust and business impact</text>
+    </svg>
+    <figcaption>Figure 2. Agentic maturity model: four stages, each with its gating control.</figcaption>
+  </figure>
+  <p>Each step up requires all three levers to move together: platform capability, governance controls, and redesigned work. Promote a workflow to the next stage only when its evaluations and incident record justify it.</p>
+</section>
+
+<!-- 3 -->
+<section id="roadmap">
+  <h2>3. Transformation roadmap</h2>
+  <p>The journey runs in six steps. Steps 3 to 6 repeat for each new value stream, so the platform and playbook get reused rather than rebuilt.</p>
+  <figure>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 352" role="img" aria-label="Six steps to an agentic-AI-first organization" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs>
+        <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker>
+        <marker id="a2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker>
+      </defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">Six steps, with work redesign as the step most programs skip</text>
+      <text x="28" y="74" font-weight="700" fill="#44546A" letter-spacing="1">FOUNDATION</text>
+      <text x="28" y="210" font-weight="700" fill="#44546A" letter-spacing="1">SCALE AND EMBED</text>
+      <g fill="none" stroke="#2E75B6" stroke-width="1.25">
+        <path d="M236 124H268" marker-end="url(#a2)"/>
+        <path d="M476 124H508" marker-end="url(#a2)"/>
+        <path d="M612 164V190H178V220" marker-end="url(#a2)"/>
+        <path d="M236 260H268" marker-end="url(#a2)"/>
+        <path d="M476 260H508" marker-end="url(#a2)"/>
+      </g>
+      <path d="M716 260H736V124H716" fill="none" stroke="#2E75B6" stroke-width="1.25" stroke-dasharray="4 3" marker-end="url(#a2b)"/>
+      <text x="736" y="324" text-anchor="end" fill="#44546A">Steps 3 to 6 repeat for each new value stream</text>
+      <g>
+        <rect x="28" y="84" width="208" height="80" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+        <text x="44" y="110" font-size="13" font-weight="700" fill="#1F3864">1. Set the ambition</text>
+        <text x="44" y="132" fill="#222222">Executive sponsor, measurable</text>
+        <text x="44" y="148" fill="#222222">outcomes and a funded mandate</text>
+      </g>
+      <g>
+        <rect x="268" y="84" width="208" height="80" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+        <text x="284" y="110" font-size="13" font-weight="700" fill="#1F3864">2. Pick value streams</text>
+        <text x="284" y="132" fill="#222222">Score workflows on value</text>
+        <text x="284" y="148" fill="#222222">and risk; start with three</text>
+      </g>
+      <g>
+        <rect x="508" y="84" width="208" height="80" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+        <text x="524" y="110" font-size="13" font-weight="700" fill="#1F3864">3. Build the platform</text>
+        <text x="524" y="132" fill="#222222">Identity, sandboxes, tool</text>
+        <text x="524" y="148" fill="#222222">registry, tracing and evals</text>
+      </g>
+      <g>
+        <rect x="28" y="220" width="208" height="80" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/>
+        <text x="44" y="246" font-size="13" font-weight="700" fill="#1F3864">4. Redesign the work</text>
+        <text x="44" y="268" fill="#222222">Rebuild processes around</text>
+        <text x="44" y="284" fill="#222222">agents, not around old roles</text>
+      </g>
+      <g>
+        <rect x="268" y="220" width="208" height="80" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+        <text x="284" y="246" font-size="13" font-weight="700" fill="#1F3864">5. Scale with guardrails</text>
+        <text x="284" y="268" fill="#222222">Raise autonomy tiers as</text>
+        <text x="284" y="284" fill="#222222">evals and incidents allow</text>
+      </g>
+      <g>
+        <rect x="508" y="220" width="208" height="80" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/>
+        <text x="524" y="246" font-size="13" font-weight="700" fill="#1F3864">6. Reskill and reorganize</text>
+        <text x="524" y="268" fill="#222222">New roles, incentives and</text>
+        <text x="524" y="284" fill="#222222">a hub-and-spoke model</text>
+      </g>
+    </svg>
+    <figcaption>Figure 3. Six-step transformation roadmap.</figcaption>
+  </figure>
+  <p>Start with workflows that are high-volume, rules-rich and reversible (claims intake, reconciliations, code maintenance, research synthesis). Avoid starting where a single agent error is costly or irreversible.</p>
+</section>
+
+<!-- 4 -->
+<section id="architecture">
+  <h2>4. Reference architecture</h2>
+  <p>Build one shared agent platform, not a platform per team. Five functional layers sit beside a single trust layer that every agent call passes through.</p>
+  <figure>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 496" role="img" aria-label="One trust layer governs every layer of the agent platform" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">One trust layer governs every layer of the agent platform</text>
+      <rect x="28" y="52" width="704" height="44" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/>
+      <text x="44" y="79" font-size="13" font-weight="700" fill="#1F3864">People</text>
+      <text x="108" y="79" fill="#44546A">Set goals, approve high-impact actions, supervise exceptions, own outcomes</text>
+      <line x1="228" y1="96" x2="228" y2="128" stroke="#2E75B6" stroke-width="1.25" marker-start="url(#a3)" marker-end="url(#a3)"/>
+      <text x="240" y="116" fill="#44546A">goals down, results and escalations up</text>
+      <g stroke="#2E75B6" stroke-width="1.25">
+        <line x1="540" y1="156" x2="556" y2="156"/><line x1="540" y1="228" x2="556" y2="228"/><line x1="540" y1="300" x2="556" y2="300"/><line x1="540" y1="372" x2="556" y2="372"/><line x1="540" y1="444" x2="556" y2="444"/>
+      </g>
+      <g fill="#fff" stroke="#1F3864" stroke-width="1.25">
+        <rect x="28" y="128" width="512" height="56" rx="2"/><rect x="28" y="200" width="512" height="56" rx="2"/><rect x="28" y="272" width="512" height="56" rx="2"/><rect x="28" y="344" width="512" height="56" rx="2"/><rect x="28" y="416" width="512" height="56" rx="2"/>
+      </g>
+      <text x="44" y="152" font-size="13" font-weight="700" fill="#1F3864">Experience and channels</text>
+      <text x="44" y="170" fill="#44546A">Where people assign goals and review work: apps, chat, workspaces, APIs</text>
+      <text x="44" y="224" font-size="13" font-weight="700" fill="#1F3864">Orchestration</text>
+      <text x="44" y="242" fill="#44546A">Planning, multi-agent coordination, approval steps, retries and handoffs</text>
+      <text x="44" y="296" font-size="13" font-weight="700" fill="#1F3864">Agents</text>
+      <text x="44" y="314" fill="#44546A">Domain agents with defined goals, memory, skills and an autonomy tier</text>
+      <text x="44" y="368" font-size="13" font-weight="700" fill="#1F3864">Tools and data (via MCP)</text>
+      <text x="44" y="386" fill="#44546A">Approved MCP servers, enterprise APIs, data products and knowledge bases</text>
+      <text x="44" y="440" font-size="13" font-weight="700" fill="#1F3864">Models</text>
+      <text x="44" y="458" fill="#44546A">Frontier and open models behind a gateway with routing and cost control</text>
+      <rect x="556" y="128" width="176" height="344" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/>
+      <text x="572" y="156" font-size="13" font-weight="700" fill="#1F3864">Trust layer</text>
+      <g fill="#222222">
+        <text x="572" y="192">Workload identity</text>
+        <text x="572" y="230">Policy and permissions</text>
+        <text x="572" y="268">Guardrails</text>
+        <text x="572" y="306">Sandboxing</text>
+        <text x="572" y="344">Tool supply-chain review</text>
+        <text x="572" y="382">Tracing and audit</text>
+        <text x="572" y="420">Evaluations</text>
+        <text x="572" y="458">Cost controls</text>
+      </g>
+    </svg>
+    <figcaption>Figure 4. Agent platform reference architecture: five layers plus a cross-cutting trust layer.</figcaption>
+  </figure>
+  <p>Keep the layers loosely coupled: models and tools will change faster than your workflows, so swapping a model or an MCP server should never mean rewriting an agent.</p>
+</section>
+
+<!-- 5 -->
+<section id="technical">
+  <h2>5. Technical deep dive</h2>
+  <p>The trust layer is not one product: it is a chain of enforcement points that every agent action crosses. The diagram traces one tool call end to end; the subsections below cover each control.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 384" role="img" aria-label="Every tool call passes a policy check and a gateway before it touches a system" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">Every tool call passes a policy check and a gateway before it touches a system</text>
+      <g fill="none" stroke="#2E75B6" stroke-width="1.25">
+      <path d="M184 102H212" marker-end="url(#a5)"/><path d="M368 102H396" marker-end="url(#a5)"/><path d="M552 102H580" marker-end="url(#a5)"/>
+      <path d="M658 140V220" marker-end="url(#a5)"/>
+      <path d="M580 258H552" marker-end="url(#a5)"/><path d="M396 258H368" marker-end="url(#a5)"/><path d="M212 258H184" marker-end="url(#a5)"/></g>
+      <text x="648" y="172" text-anchor="end" fill="#44546A">allow, deny, or</text><text x="648" y="188" text-anchor="end" fill="#44546A">pause for human approval</text>
+      <rect x="28" y="64" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="90" font-size="13" font-weight="700" fill="#1F3864">1. Goal</text><text x="42" y="110" fill="#222222">Person or event</text><text x="42" y="126" fill="#222222">sets the outcome</text>
+      <rect x="212" y="64" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="226" y="90" font-size="13" font-weight="700" fill="#1F3864">2. Orchestrator</text><text x="226" y="110" fill="#222222">Plans the steps,</text><text x="226" y="126" fill="#222222">assigns an agent</text>
+      <rect x="396" y="64" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="410" y="90" font-size="13" font-weight="700" fill="#1F3864">3. Agent</text><text x="410" y="110" fill="#222222">Reasons, proposes</text><text x="410" y="126" fill="#222222">a tool call</text>
+      <rect x="580" y="64" width="156" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="594" y="90" font-size="13" font-weight="700" fill="#1F3864">4. Policy engine</text><text x="594" y="110" fill="#222222">Checks identity,</text><text x="594" y="126" fill="#222222">scope, autonomy tier</text>
+      <rect x="580" y="220" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="594" y="246" font-size="13" font-weight="700" fill="#1F3864">5. MCP gateway</text><text x="594" y="266" fill="#222222">Exchanges token,</text><text x="594" y="282" fill="#222222">pins tool version</text>
+      <rect x="396" y="220" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="410" y="246" font-size="13" font-weight="700" fill="#1F3864">6. Tool in sandbox</text><text x="410" y="266" fill="#222222">Runs with a scoped,</text><text x="410" y="282" fill="#222222">short-lived token</text>
+      <rect x="212" y="220" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="226" y="246" font-size="13" font-weight="700" fill="#1F3864">7. Output guardrail</text><text x="226" y="266" fill="#222222">Screens result for</text><text x="226" y="282" fill="#222222">injection and leaks</text>
+      <rect x="28" y="220" width="156" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="246" font-size="13" font-weight="700" fill="#1F3864">8. Agent loop</text><text x="42" y="266" fill="#222222">Next step, finish,</text><text x="42" y="282" fill="#222222">or escalate</text>
+      <rect x="28" y="320" width="708" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/>
+      <text x="382" y="344" text-anchor="middle" fill="#222222">Every step emits an OpenTelemetry span: identity, tool, arguments, decision, cost</text>
+      </svg>
+    <figcaption>Figure 5. Request flow: eight steps through the trust layer.</figcaption>
+  </figure>
+  <p>The policy engine is the single choke point: if an action cannot be expressed as a policy decision, it cannot be governed or audited.</p>
+
+  <h3>Identity and delegation</h3>
+  <ul>
+    <li><strong>One identity per agent, per environment.</strong> Issue each agent a workload identity such as a SPIFFE ID (<code>spiffe://corp.example/agent/claims-intake/prod</code>), attested by SPIRE and presented as an X.509 or JWT SVID for mTLS between components <a href="#ref11">[11]</a>.</li>
+    <li><strong>Act on behalf of, never as.</strong> When an agent works for a person, use OAuth 2.0 Token Exchange (RFC 8693) to mint a down-scoped token that names both the user (<code>sub</code>) and the agent (<code>act</code>) <a href="#ref13">[13]</a>. Keep lifetimes in minutes and bind each token to one audience.</li>
+    <li><strong>Follow the MCP authorization profile.</strong> MCP servers act as OAuth 2.1 resource servers and must publish Protected Resource Metadata (RFC 9728). Clients must send the RFC 8707 <code>resource</code> parameter so tokens are audience-bound, and servers must reject tokens not issued for them and must not pass tokens through to upstream APIs <a href="#ref12">[12]</a>.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 548" role="img" aria-label="Token exchange sequence" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Agents act on behalf of a user with a down-scoped, audience-bound token</text><rect x="35" y="52" width="150" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="110" y="70" font-size="13" font-weight="700" text-anchor="middle" fill="#1F3864">User</text><text x="110" y="87" text-anchor="middle" fill="#44546A">principal</text><line x1="110" y1="96" x2="110" y2="372" stroke="#C9D3E0" stroke-width="1.25" stroke-dasharray="4 4"/><rect x="225" y="52" width="150" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="300" y="70" font-size="13" font-weight="700" text-anchor="middle" fill="#1F3864">Agent</text><text x="300" y="87" text-anchor="middle" fill="#44546A">SPIFFE ID + SVID</text><line x1="300" y1="96" x2="300" y2="372" stroke="#C9D3E0" stroke-width="1.25" stroke-dasharray="4 4"/><rect x="415" y="52" width="150" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="490" y="70" font-size="13" font-weight="700" text-anchor="middle" fill="#1F3864">Token service</text><text x="490" y="87" text-anchor="middle" fill="#44546A">RFC 8693 exchange</text><line x1="490" y1="96" x2="490" y2="372" stroke="#C9D3E0" stroke-width="1.25" stroke-dasharray="4 4"/><rect x="595" y="52" width="150" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="670" y="70" font-size="13" font-weight="700" text-anchor="middle" fill="#1F3864">MCP server</text><text x="670" y="87" text-anchor="middle" fill="#44546A">resource server</text><line x1="670" y1="96" x2="670" y2="372" stroke="#C9D3E0" stroke-width="1.25" stroke-dasharray="4 4"/><path d="M110 128H296" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s1)"/><text x="205.0" y="120" text-anchor="middle" fill="#222222">delegates task + user token</text><path d="M300 172H486" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s1)"/><text x="395.0" y="164" text-anchor="middle" fill="#222222">exchange: user token + SVID</text><path d="M490 216H304" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s1)"/><text x="395.0" y="208" text-anchor="middle" fill="#222222">down-scoped, audience-bound</text><path d="M300 260H666" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s1)"/><text x="485.0" y="252" text-anchor="middle" fill="#222222">tool call with bound token</text><path d="M670 348H304" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s1)"/><text x="485.0" y="340" text-anchor="middle" fill="#222222">result, or 403 insufficient_scope</text><rect x="605" y="284" width="130" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="670" y="301" text-anchor="middle" fill="#222222">validates aud,</text><text x="670" y="316" text-anchor="middle" fill="#222222">scope and expiry</text><text x="28" y="404" font-size="12" font-weight="700" fill="#1F3864">Resulting token (decoded claims, illustrative)</text><rect x="28" y="414" width="704" height="116" rx="2" fill="#F7F9FC" stroke="#1F3864" stroke-width="1.25"/><text x="48" y="438" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#1F3864">"sub":   "alice@corp.example",</text><text x="48" y="456" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#1F3864">"act":   { "sub": "spiffe://corp.example/agent/ap-clerk/prod" },</text><text x="48" y="474" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#1F3864">"aud":   "https://erp-mcp.corp.example",</text><text x="48" y="492" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#1F3864">"scope": "invoices.read payments.draft",</text><text x="48" y="510" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#1F3864">"exp":   issued_at + 10 minutes</text></svg>
+    <figcaption>Figure 6. Delegated identity: OAuth 2.0 token exchange produces a token naming both the user and the agent, bound to one MCP server.</figcaption>
+  </figure>
+
+  <h3>Tool access through an MCP gateway</h3>
+  <p>Route every agent-to-tool call through one gateway rather than letting agents connect to MCP servers directly. The gateway:</p>
+  <ul>
+    <li>allows only servers from an approved registry, pinned by version or image digest;</li>
+    <li>diffs tool descriptions on every update to catch silent changes ("rug pulls") and tool poisoning;</li>
+    <li>validates arguments against the tool schema and enforces rate and spend limits;</li>
+    <li>redacts secrets and personal data in both directions;</li>
+    <li>calls the policy engine for each invocation and logs the decision.</li>
+  </ul>
+  <p>Treat tool descriptions and tool results as untrusted input, exactly like web content.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="MCP gateway pipeline" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">The MCP gateway runs five checks before any call reaches a tool server</text><rect x="28" y="184" width="120" height="60" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="208" font-size="13" font-weight="700" fill="#1F3864">Agent</text><text x="42" y="228" fill="#222222">tool call</text><rect x="176" y="56" width="340" height="300" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="192" y="80" font-size="13" font-weight="700" fill="#1F3864">MCP gateway</text><rect x="192" y="92" width="308" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="206" y="111" font-size="12.5" font-weight="700" fill="#1F3864">1. Registry check</text><text x="206" y="127" fill="#222222">approved server, pinned by digest</text><path d="M346 136V144" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="192" y="144" width="308" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="206" y="163" font-size="12.5" font-weight="700" fill="#1F3864">2. Description diff</text><text x="206" y="179" fill="#222222">flags changed tool definitions</text><path d="M346 188V196" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="192" y="196" width="308" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="206" y="215" font-size="12.5" font-weight="700" fill="#1F3864">3. Schema and limits</text><text x="206" y="231" fill="#222222">argument validation, rate, spend</text><path d="M346 240V248" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="192" y="248" width="308" height="44" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="206" y="267" font-size="12.5" font-weight="700" fill="#1F3864">4. Policy decision</text><text x="206" y="283" fill="#222222">identity, scope, autonomy tier</text><path d="M346 292V300" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="192" y="300" width="308" height="44" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="206" y="319" font-size="12.5" font-weight="700" fill="#1F3864">5. Redact and log</text><text x="206" y="335" fill="#222222">secrets, personal data, audit trail</text><path d="M148 214H176" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="560" y="86" width="172" height="52" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="574" y="110" font-size="13" font-weight="700" fill="#1F3864">erp-mcp</text><text x="574" y="130" fill="#222222">invoices, payments</text><path d="M516 112H560" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="560" y="156" width="172" height="52" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="574" y="180" font-size="13" font-weight="700" fill="#1F3864">crm-mcp</text><text x="574" y="200" fill="#222222">accounts, cases</text><path d="M516 182H560" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="560" y="226" width="172" height="52" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="574" y="250" font-size="13" font-weight="700" fill="#1F3864">code-mcp</text><text x="574" y="270" fill="#222222">repositories, CI</text><path d="M516 252H560" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s2)"/><rect x="560" y="296" width="172" height="52" rx="2" fill="#fff" stroke="#44546A" stroke-width="1.25" stroke-dasharray="5 4"/><text x="574" y="320" font-size="13" font-weight="700" fill="#44546A">unvetted-mcp</text><text x="574" y="338" fill="#44546A">not in registry</text><path d="M516 322H556" fill="none" stroke="#B03A2E" stroke-width="1.25" stroke-dasharray="5 4"/><text x="538" y="340" font-size="11" font-weight="700" text-anchor="middle" fill="#B03A2E">blocked</text></svg>
+    <figcaption>Figure 7. MCP gateway pipeline: every tool call passes five checks; servers outside the registry are unreachable.</figcaption>
+  </figure>
+
+  <h3>Policy as code</h3>
+  <p>Express autonomy tiers, scopes and limits as versioned policy, reviewed like code. An illustrative workflow policy:</p>
+<pre><code>workflow: vendor-payments
+agent: spiffe://corp.example/agent/ap-clerk/prod
+autonomy_tier: 2                  # act with approval
+model: pinned-model-2026-09       # re-run evals before changing
+tools:
+  - server: erp-mcp@sha256:&lt;digest&gt;
+    allow: [invoices.read, payments.draft]
+    require_approval: [payments.submit]
+limits:
+  max_payment_usd: 25000
+  token_ttl_minutes: 10
+  max_steps_per_task: 40
+egress_allowlist: [erp.internal.example]</code></pre>
+  <p>Policy engines such as OPA (Rego) or Cedar can evaluate these rules inline at the gateway, so the same policy file drives enforcement, approvals and audit.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 324" role="img" aria-label="Policy lifecycle" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Policy changes ship like code: reviewed, tested, versioned and audited</text><rect x="52" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="66" y="80" font-size="13" font-weight="700" fill="#1F3864">Author</text><text x="66" y="100" fill="#222222">Policy as YAML in Git,</text><text x="66" y="116" fill="#222222">one file per workflow</text><rect x="280" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="294" y="80" font-size="13" font-weight="700" fill="#1F3864">Review</text><text x="294" y="100" fill="#222222">Pull request with risk</text><text x="294" y="116" fill="#222222">and security sign-off</text><rect x="508" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="522" y="80" font-size="13" font-weight="700" fill="#1F3864">Test</text><text x="522" y="100" fill="#222222">Unit tests plus replay</text><text x="522" y="116" fill="#222222">of recorded traces</text><rect x="52" y="196" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="66" y="220" font-size="13" font-weight="700" fill="#1F3864">Audit and tune</text><text x="66" y="240" fill="#222222">Decision logs feed</text><text x="66" y="256" fill="#222222">tuning and evidence</text><rect x="280" y="196" width="200" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="294" y="220" font-size="13" font-weight="700" fill="#1F3864">Enforce</text><text x="294" y="240" fill="#222222">Allow, deny or approve</text><text x="294" y="256" fill="#222222">on every tool call</text><rect x="508" y="196" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="522" y="220" font-size="13" font-weight="700" fill="#1F3864">Deploy</text><text x="522" y="240" fill="#222222">Signed, versioned bundle</text><text x="522" y="256" fill="#222222">pushed to the gateway</text><path d="M252 94H280" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s3)"/><path d="M480 94H508" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s3)"/><path d="M608 132V196" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s3)"/><path d="M508 234H480" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s3)"/><path d="M280 234H252" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s3)"/><path d="M52 234H34V94H52" fill="none" stroke="#2E75B6" stroke-width="1.25" stroke-dasharray="5 4" marker-end="url(#s3)"/><text x="28" y="306" fill="#44546A">The loop closes: decision logs show which rules fire, block or cause approvals, and drive the next change</text></svg>
+    <figcaption>Figure 8. Policy-as-code lifecycle: one versioned file per workflow drives enforcement, approvals and audit.</figcaption>
+  </figure>
+
+  <h3>Execution isolation</h3>
+  <ul>
+    <li>Run code-executing agents in ephemeral Firecracker microVMs or gVisor sandboxes, one per task, destroyed afterwards.</li>
+    <li>No ambient credentials: secrets are injected per task by a broker and never placed in the prompt or context window.</li>
+    <li>Read-only base images, CPU, memory and wall-clock quotas, and egress only through an allow-listed proxy.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="Execution isolation" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Each task runs in a throwaway sandbox with no standing access</text><rect x="28" y="52" width="492" height="308" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="44" y="76" font-size="13" font-weight="700" fill="#1F3864">Host</text><text x="88" y="76" fill="#44546A">no ambient credentials, no direct network route</text><rect x="48" y="92" width="452" height="248" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="64" y="116" font-size="13" font-weight="700" fill="#1F3864">Ephemeral microVM or gVisor sandbox, one per task</text><rect x="64" y="132" width="200" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="78" y="156" font-size="13" font-weight="700" fill="#1F3864">Agent tool execution</text><text x="78" y="176" fill="#222222">code, scripts, file parsing</text><rect x="284" y="132" width="200" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="298" y="156" font-size="13" font-weight="700" fill="#1F3864">Read-only base image</text><text x="298" y="176" fill="#222222">no installs at run time</text><rect x="64" y="232" width="200" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="78" y="256" font-size="13" font-weight="700" fill="#1F3864">Scratch disk</text><text x="78" y="276" fill="#222222">wiped when the task ends</text><rect x="284" y="232" width="200" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="298" y="256" font-size="13" font-weight="700" fill="#1F3864">Quotas</text><text x="298" y="276" fill="#222222">CPU, memory, wall clock</text><rect x="560" y="92" width="172" height="72" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="574" y="116" font-size="13" font-weight="700" fill="#1F3864">Secrets broker</text><text x="574" y="136" fill="#222222">injects scoped creds</text><text x="574" y="152" fill="#222222">per task, never in prompt</text><rect x="560" y="212" width="172" height="72" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="574" y="236" font-size="13" font-weight="700" fill="#1F3864">Egress proxy</text><text x="574" y="256" fill="#222222">allow-list only</text><path d="M560 128H504" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s4)"/><path d="M500 248H560" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s4)"/><text x="560" y="308" font-size="11.5" font-weight="700" fill="#2E75B6">erp.internal.example: allowed</text><text x="560" y="326" font-size="11.5" font-weight="700" fill="#B03A2E">all other hosts: blocked</text></svg>
+    <figcaption>Figure 9. Execution isolation: credentials come in through a broker and traffic leaves only through an allow-listed proxy.</figcaption>
+  </figure>
+
+  <h3>Context and memory</h3>
+  <ul>
+    <li>Separate short-lived task context from long-term memory, and scope memory stores per tenant, user and workflow.</li>
+    <li>Enforce source access controls at retrieval time, so an agent cannot read what its principal could not.</li>
+    <li>Validate and attribute memory writes to prevent memory poisoning; apply retention limits and support erasure requests.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="Context and memory paths" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Reads and writes to memory pass through separate, enforced paths</text><rect x="28" y="92" width="140" height="216" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="116" font-size="13" font-weight="700" fill="#1F3864">Agent</text><text x="42" y="136" fill="#222222">task context lives</text><text x="42" y="152" fill="#222222">only for this task</text><text x="260" y="80" font-size="11" font-weight="700" fill="#44546A">READ PATH</text><text x="260" y="226" font-size="11" font-weight="700" fill="#44546A">WRITE PATH</text><rect x="216" y="92" width="220" height="72" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="230" y="116" font-size="13" font-weight="700" fill="#1F3864">Retrieval gateway</text><text x="230" y="136" fill="#222222">enforces source ACLs</text><text x="230" y="152" fill="#222222">as the principal</text><rect x="484" y="92" width="248" height="72" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="498" y="116" font-size="13" font-weight="700" fill="#1F3864">Enterprise sources</text><text x="498" y="136" fill="#222222">documents, databases,</text><text x="498" y="152" fill="#222222">APIs, data products</text><rect x="216" y="236" width="220" height="72" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="230" y="260" font-size="13" font-weight="700" fill="#1F3864">Write validation</text><text x="230" y="280" fill="#222222">provenance, PII and</text><text x="230" y="296" fill="#222222">poisoning checks</text><rect x="484" y="236" width="248" height="124" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="498" y="260" font-size="13" font-weight="700" fill="#1F3864">Long-term memory</text><rect x="498" y="272" width="68" height="32" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="532" y="292" font-size="10.5" text-anchor="middle" fill="#222222">per tenant</text><rect x="574" y="272" width="68" height="32" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="608" y="292" font-size="10.5" text-anchor="middle" fill="#222222">per user</text><rect x="650" y="272" width="68" height="32" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="684" y="292" font-size="10.5" text-anchor="middle" fill="#222222">per workflow</text><text x="498" y="330" fill="#44546A">retention limits,</text><text x="498" y="346" fill="#44546A">erasure on request</text><path d="M168 128H216" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s5)"/><path d="M436 128H484" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s5)"/><path d="M168 272H216" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s5)"/><path d="M436 272H484" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s5)"/><path d="M520 236V200H326V164" fill="none" stroke="#2E75B6" stroke-width="1.25" stroke-dasharray="5 4" marker-end="url(#s5)"/><text x="336" y="194" fill="#44546A">memory reads pass the same check</text></svg>
+    <figcaption>Figure 10. Context and memory: reads are filtered by the principal's access, writes are validated before they persist.</figcaption>
+  </figure>
+
+  <h3>Multi-agent coordination</h3>
+  <ul>
+    <li>Use MCP for agent-to-tool connections and the Agent2Agent (A2A) protocol for agent-to-agent delegation. A2A is hosted by the Linux Foundation and passed 150 supporting organizations in its first year <a href="#ref14">[14]</a>.</li>
+    <li>No transitive trust: each hop re-authenticates, delegated scopes can only shrink, and delegation depth is capped.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-label="Multi-agent delegation" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Delegation narrows at every hop</text><rect x="260" y="52" width="240" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="274" y="76" font-size="13" font-weight="700" fill="#1F3864">Orchestrator agent</text><text x="274" y="96" fill="#222222">scope: invoices.*, payments.draft,</text><text x="274" y="112" fill="#222222">vendor.read</text><rect x="60" y="196" width="240" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="74" y="220" font-size="13" font-weight="700" fill="#1F3864">Invoice agent</text><text x="74" y="240" fill="#222222">scope: invoices.read</text><text x="74" y="256" fill="#222222">delegation depth 1</text><rect x="460" y="196" width="240" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="474" y="220" font-size="13" font-weight="700" fill="#1F3864">Vendor agent</text><text x="474" y="240" fill="#222222">scope: vendor.read</text><text x="474" y="256" fill="#222222">delegation depth 1</text><path d="M380 128V162H180V196" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s6)"/><path d="M380 162H580V196" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s6)"/><text x="392" y="152" fill="#44546A">A2A, re-authenticated per hop</text><rect x="90" y="328" width="180" height="48" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="104" y="352" font-size="13" font-weight="700" fill="#1F3864">erp-mcp</text><rect x="490" y="328" width="180" height="48" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="504" y="352" font-size="13" font-weight="700" fill="#1F3864">vendor-mcp</text><path d="M180 272V328" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s6)"/><path d="M580 272V328" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s6)"/><text x="192" y="304" fill="#44546A">MCP via gateway</text><text x="592" y="304" fill="#44546A">MCP via gateway</text><rect x="28" y="400" width="704" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="380" y="424" text-anchor="middle" fill="#222222">No transitive trust: each hop re-authenticates, scopes only shrink, depth is capped</text></svg>
+    <figcaption>Figure 11. Multi-agent coordination: A2A between agents, MCP from agents to tools, with scopes shrinking at each hop.</figcaption>
+  </figure>
+
+  <h3>Evaluation pipeline</h3>
+  <ul>
+    <li><strong>Offline:</strong> a golden task set per workflow, graded by deterministic checks, model graders and human spot checks. Re-run it in CI on every change to prompts, tools, policies or model versions.</li>
+    <li><strong>Online:</strong> shadow mode first, then a canary share of live traffic, with automatic rollback on error or escalation spikes.</li>
+    <li><strong>Adversarial:</strong> standing prompt-injection and tool-misuse suites mapped to the OWASP Top 10 for Agentic Applications <a href="#ref8">[8]</a>.</li>
+    <li>Promotion to a higher autonomy tier requires the workflow's pass-rate threshold plus a clean incident window, both defined in its policy.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 336" role="img" aria-label="Evaluation pipeline" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker><marker id="s7r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#B03A2E"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">No change reaches production without passing four evaluation stages</text><rect x="52" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="66" y="80" font-size="13" font-weight="700" fill="#1F3864">Change proposed</text><text x="66" y="100" fill="#222222">prompt, tool, policy</text><text x="66" y="116" fill="#222222">or model version</text><rect x="280" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="294" y="80" font-size="13" font-weight="700" fill="#1F3864">Offline evals</text><text x="294" y="100" fill="#222222">golden task set, model</text><text x="294" y="116" fill="#222222">graders, spot checks</text><rect x="508" y="56" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="522" y="80" font-size="13" font-weight="700" fill="#1F3864">Adversarial suite</text><text x="522" y="100" fill="#222222">prompt injection and</text><text x="522" y="116" fill="#222222">tool misuse tests</text><rect x="52" y="196" width="200" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="66" y="220" font-size="13" font-weight="700" fill="#1F3864">Promote</text><text x="66" y="240" fill="#222222">full rollout or a</text><text x="66" y="256" fill="#222222">higher autonomy tier</text><rect x="280" y="196" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="294" y="220" font-size="13" font-weight="700" fill="#1F3864">Canary</text><text x="294" y="240" fill="#222222">small share of traffic,</text><text x="294" y="256" fill="#222222">auto-rollback on spikes</text><rect x="508" y="196" width="200" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="522" y="220" font-size="13" font-weight="700" fill="#1F3864">Shadow mode</text><text x="522" y="240" fill="#222222">runs on live inputs,</text><text x="522" y="256" fill="#222222">actions not executed</text><path d="M252 94H280" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s7)"/><path d="M480 94H508" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s7)"/><path d="M608 132V196" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s7)"/><path d="M508 234H480" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s7)"/><path d="M280 234H252" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s7)"/><text x="600" y="168" text-anchor="end" fill="#44546A">pass</text><path d="M608 272V296H380V272M380 296H36V94H48" fill="none" stroke="#B03A2E" stroke-width="1.25" stroke-dasharray="5 4" marker-end="url(#s7r)"/><text x="52" y="318" font-size="11.5" font-weight="700" fill="#B03A2E">Fail at any stage: roll back, fix and re-run from the start</text><text x="732" y="318" text-anchor="end" fill="#44546A">Solid arrows: stage passed</text></svg>
+    <figcaption>Figure 12. Evaluation pipeline: offline, adversarial, shadow and canary stages gate every change and every autonomy promotion.</figcaption>
+  </figure>
+
+  <h3>Observability and cost</h3>
+  <ul>
+    <li>Instrument with the OpenTelemetry GenAI semantic conventions, which define spans such as <code>invoke_agent</code>, <code>invoke_workflow</code> and <code>plan</code> (still at Development stability, so pin the version) <a href="#ref15">[15]</a>.</li>
+    <li>Record on every span: agent identity, principal, model version, tool and arguments, policy decision, approver, tokens and cost.</li>
+    <li>Put a model gateway in front of all model calls for routing by task class, fallbacks, caching and per-workflow budgets.</li>
+  </ul>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 384" role="img" aria-label="Trace waterfall" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">One trace shows every step, decision and approval in a task</text><text x="28" y="62" font-size="11" font-weight="700" fill="#44546A">SPAN</text><text x="208" y="62" font-size="11" font-weight="700" fill="#44546A">RELATIVE TIME (ILLUSTRATIVE)</text><rect x="28" y="76" width="404" height="30" fill="#F7F9FC"/><text x="36" y="96" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">invoke_workflow</text><rect x="208.0" y="84" width="212.0" height="14" fill="#8FB3DA"/><text x="52" y="126" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">plan</text><rect x="212.2" y="114" width="21.2" height="14" fill="#8FB3DA"/><rect x="28" y="136" width="404" height="30" fill="#F7F9FC"/><text x="52" y="156" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">invoke_agent</text><rect x="235.6" y="144" width="180.2" height="14" fill="#8FB3DA"/><text x="68" y="186" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">chat</text><rect x="237.7" y="174" width="33.9" height="14" fill="#B9CFE8"/><rect x="28" y="196" width="404" height="30" fill="#F7F9FC"/><text x="68" y="216" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">execute_tool</text><rect x="273.7" y="204" width="19.1" height="14" fill="#B9CFE8"/><text x="68" y="246" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">chat</text><rect x="294.9" y="234" width="23.3" height="14" fill="#B9CFE8"/><rect x="28" y="256" width="404" height="30" fill="#F7F9FC"/><text x="68" y="276" font-size="11.5" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">execute_tool</text><rect x="320.4" y="264" width="74.2" height="14" fill="#2E75B6"/><text x="68" y="306" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#222222">chat</text><rect x="396.7" y="294" width="17.0" height="14" fill="#B9CFE8"/><line x1="208" y1="76" x2="208" y2="316" stroke="#C9D3E0"/><text x="28" y="340" fill="#44546A">Highlighted: tool call paused for human approval</text><rect x="456" y="52" width="276" height="296" rx="2" fill="#F7F9FC" stroke="#1F3864" stroke-width="1.25"/><text x="470" y="76" font-size="12.5" font-weight="700" fill="#1F3864">Attributes on the highlighted span</text><text x="470" y="104" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">gen_ai.operation.name</text><text x="470" y="119" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">execute_tool</text><text x="470" y="138" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">gen_ai.tool.name</text><text x="470" y="153" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">payments.submit</text><text x="470" y="172" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">gen_ai.agent.name</text><text x="470" y="187" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">ap-clerk</text><text x="470" y="206" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">gen_ai.request.model</text><text x="470" y="221" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">pinned-model-2026-09</text><text x="470" y="240" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">app.principal</text><text x="470" y="255" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">alice@corp.example</text><text x="470" y="274" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">app.policy.decision</text><text x="470" y="289" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">require_approval</text><text x="470" y="308" font-size="10.5" font-family="Consolas, Menlo, monospace" fill="#44546A">app.approver</text><text x="470" y="323" font-size="11" font-weight="700" font-family="Consolas, Menlo, monospace" fill="#1F3864">bob@corp.example</text><text x="732" y="368" font-size="10.5" text-anchor="end" fill="#44546A">gen_ai.* from OpenTelemetry GenAI conventions; app.* are custom</text></svg>
+    <figcaption>Figure 13. Observability: an illustrative trace with OpenTelemetry GenAI spans and custom audit attributes.</figcaption>
+  </figure>
+</section>
+
+<!-- 6 -->
+<section id="governance">
+  <h2>6. Governance and security controls</h2>
+  <p>Treat every agent as a privileged, non-human workload that can be manipulated through its inputs. Autonomy should expand only as controls prove out.</p>
+  <figure>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 312" role="img" aria-label="Autonomy is earned tier by tier, per workflow" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">Autonomy is earned tier by tier, per workflow</text>
+      <text x="224" y="74" font-weight="700" fill="#2E75B6">Start lighthouse workflows here</text>
+      <g stroke-width="1.25">
+        <rect x="28" y="84" width="164" height="160" rx="2" fill="#fff" stroke="#1F3864"/>
+        <rect x="208" y="84" width="164" height="160" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/>
+        <rect x="388" y="84" width="164" height="160" rx="2" fill="#fff" stroke="#1F3864"/>
+        <rect x="568" y="84" width="164" height="160" rx="2" fill="#fff" stroke="#1F3864"/>
+      </g>
+      <g stroke="#C9D3E0"><line x1="44" y1="138" x2="176" y2="138"/><line x1="224" y1="138" x2="356" y2="138" stroke="#BFD3EA"/><line x1="404" y1="138" x2="536" y2="138"/><line x1="584" y1="138" x2="716" y2="138"/></g>
+      <text x="44" y="106" fill="#44546A">Tier 1</text><text x="44" y="124" font-size="13" font-weight="700" fill="#1F3864">Suggest</text>
+      <text x="44" y="160" fill="#44546A">Human role</text><text x="44" y="176" fill="#222222">Reviews and acts</text>
+      <text x="44" y="202" fill="#44546A">Fits when</text><text x="44" y="218" fill="#222222">Work is novel or</text><text x="44" y="234" fill="#222222">high-stakes</text>
+      <text x="224" y="106" fill="#44546A">Tier 2</text><text x="224" y="124" font-size="13" font-weight="700" fill="#1F3864">Act with approval</text>
+      <text x="224" y="160" fill="#44546A">Human role</text><text x="224" y="176" fill="#222222">Approves each action</text>
+      <text x="224" y="202" fill="#44546A">Fits when</text><text x="224" y="218" fill="#222222">Workflow is new,</text><text x="224" y="234" fill="#222222">actions reversible</text>
+      <text x="404" y="106" fill="#44546A">Tier 3</text><text x="404" y="124" font-size="13" font-weight="700" fill="#1F3864">Act and notify</text>
+      <text x="404" y="160" fill="#44546A">Human role</text><text x="404" y="176" fill="#222222">Audits after the fact</text>
+      <text x="404" y="202" fill="#44546A">Fits when</text><text x="404" y="218" fill="#222222">Workflow is proven,</text><text x="404" y="234" fill="#222222">blast radius small</text>
+      <text x="584" y="106" fill="#44546A">Tier 4</text><text x="584" y="124" font-size="13" font-weight="700" fill="#1F3864">Fully autonomous</text>
+      <text x="584" y="160" fill="#44546A">Human role</text><text x="584" y="176" fill="#222222">Monitors metrics</text>
+      <text x="584" y="202" fill="#44546A">Fits when</text><text x="584" y="218" fill="#222222">High volume, strong</text><text x="584" y="234" fill="#222222">evals, easy rollback</text>
+      <line x1="28" y1="268" x2="730" y2="268" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a4)"/>
+      <text x="28" y="290" fill="#44546A">Promote only when evaluation results and incident history justify it; demote on any serious incident</text>
+    </svg>
+    <figcaption>Figure 14. Autonomy tiers: four levels of human oversight, set per workflow.</figcaption>
+  </figure>
+  <p>Set the autonomy tier per workflow, not per agent or per team. The same agent can run at Tier 4 for invoice matching and Tier 2 for vendor payments.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Control area</th><th>What good looks like</th></tr></thead>
+      <tbody>
+        <tr><td>Identity</td><td>Every agent has its own workload identity (for example SPIFFE/SPIRE), never a shared service account or a borrowed human credential</td></tr>
+        <tr><td>Least privilege</td><td>Scoped, short-lived tokens per task; read and write separated; high-impact actions need step-up approval</td></tr>
+        <tr><td>Sandboxing</td><td>Code-executing agents run in isolated microVMs or gVisor sandboxes with egress allow-lists</td></tr>
+        <tr><td>Tool and MCP supply chain</td><td>An approved registry of MCP servers and tools; provenance checks, version pinning and scanning before onboarding</td></tr>
+        <tr><td>Prompt injection defense</td><td>Untrusted content is treated as data; guardrail models screen inputs and outputs; agents cannot escalate permissions from content they read</td></tr>
+        <tr><td>Human oversight</td><td>Autonomy tiers per workflow: suggest, act with approval, act and notify, fully autonomous</td></tr>
+        <tr><td>Observability and audit</td><td>Every plan, tool call and decision is traced and attributable; replay for incident review</td></tr>
+        <tr><td>Evaluation</td><td>Task-level eval suites and red-team runs gate each autonomy promotion</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Map the program to recognized frameworks (OWASP Top 10 for Agentic Applications <a href="#ref8">[8]</a>, OWASP Top 10 for LLM Applications, MITRE ATLAS <a href="#ref10">[10]</a>, NIST AI RMF <a href="#ref9">[9]</a>) so risk and audit teams can engage on familiar terms.</p>
+</section>
+
+<!-- 6 -->
+<section id="people">
+  <h2>7. Operating model, roles and people</h2>
+  <p>The hardest part of the shift is organizational, not technical. Run it as a hub-and-spoke model: a central team owns the platform and guardrails, while business units own the workflows and outcomes.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="A central platform team serves business-unit workflow pods" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">A central platform team serves business-unit workflow pods</text>
+      <text x="28" y="52" fill="#44546A">The hub provides platform and guardrails; each spoke owns its workflows, outcomes and metrics</text>
+      <g stroke="#2E75B6" stroke-width="1.25"><line x1="236" y1="124" x2="276" y2="168" marker-start="url(#a8)" marker-end="url(#a8)"/><line x1="236" y1="244" x2="276" y2="200" marker-start="url(#a8)" marker-end="url(#a8)"/><line x1="524" y1="124" x2="484" y2="168" marker-start="url(#a8)" marker-end="url(#a8)"/><line x1="524" y1="244" x2="484" y2="200" marker-start="url(#a8)" marker-end="url(#a8)"/></g>
+      <rect x="276" y="136" width="208" height="96" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="290" y="160" font-size="13" font-weight="700" fill="#1F3864">Central agent platform team</text><text x="290" y="182" fill="#222222">Platform and agent identity</text><text x="290" y="198" fill="#222222">MCP gateway, guardrails</text><text x="290" y="214" fill="#222222">Eval tooling, standards</text>
+      <rect x="28" y="80" width="208" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="106" font-size="13" font-weight="700" fill="#1F3864">Finance pod</text><text x="42" y="128" fill="#222222">Invoice matching, close,</text><text x="42" y="144" fill="#222222">reconciliations</text>
+      <rect x="28" y="200" width="208" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="226" font-size="13" font-weight="700" fill="#1F3864">Customer service pod</text><text x="42" y="248" fill="#222222">Case triage, refunds,</text><text x="42" y="264" fill="#222222">follow-ups</text>
+      <rect x="524" y="80" width="208" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="538" y="106" font-size="13" font-weight="700" fill="#1F3864">Operations pod</text><text x="538" y="128" fill="#222222">Claims intake, order</text><text x="538" y="144" fill="#222222">exceptions</text>
+      <rect x="524" y="200" width="208" height="88" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="538" y="226" font-size="13" font-weight="700" fill="#1F3864">Engineering pod</text><text x="538" y="248" fill="#222222">Code maintenance, tests,</text><text x="538" y="264" fill="#222222">migrations</text>
+      <text x="380" y="310" text-anchor="middle" fill="#44546A">Each pod: an agent product owner, agent supervisors and agent engineers</text>
+      <rect x="28" y="324" width="704" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="380" y="348" text-anchor="middle" fill="#222222">AI governance council: policy, risk tiers and audit across hub and spokes</text>
+      </svg>
+    <figcaption>Figure 15. Hub-and-spoke operating model. The pods shown are examples; choose spokes by value stream, not by org chart.</figcaption>
+  </figure>
+  <h3>New or reshaped roles</h3>
+  <ul>
+    <li><strong>Agent product owner:</strong> owns a workflow's outcomes, autonomy tier and success metrics.</li>
+    <li><strong>Agent engineer:</strong> builds, evaluates and maintains agents, tools and integrations.</li>
+    <li><strong>AI platform and security architects:</strong> own the runtime, identity, sandboxing and tool registry.</li>
+    <li><strong>Agent supervisors:</strong> domain experts who review exceptions, approve high-impact actions and tune behavior.</li>
+    <li><strong>AI governance lead:</strong> owns policy, risk tiering and regulatory alignment.</li>
+  </ul>
+  <h3>People practices that make it stick</h3>
+  <ul>
+    <li>Train every employee to delegate to agents: writing clear goals, reviewing output, knowing when to escalate.</li>
+    <li>Rewrite job descriptions and performance goals around outcomes supervised, not tasks performed.</li>
+    <li>Give leaders a visible stake: each executive sponsors at least one agentic workflow.</li>
+    <li>Be explicit about workforce impact and reskilling paths; uncertainty kills adoption faster than any technical issue.</li>
+  </ul>
+  <h3>Role transitions and convergence</h3>
+  <p>Agents absorb execution and coordination, so roles that existed mainly to hand work between functions converge. Expect fewer, broader roles organized around outcomes rather than tasks.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 660" role="img" aria-label="Eleven roles today converge into six agent-era roles" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <defs><marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs>
+      <text x="28" y="34" font-size="15" font-weight="700" fill="#1F3864">Eleven roles today converge into six agent-era roles</text>
+      <text x="28" y="70" font-weight="700" fill="#44546A" letter-spacing="1">TODAY</text><text x="412" y="70" font-weight="700" fill="#44546A" letter-spacing="1">AGENT ERA</text>
+      <rect x="28" y="84" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="109" font-size="13" fill="#222222">Business analyst</text><line x1="248" y1="104" x2="412" y2="104" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="132" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="157" font-size="13" fill="#222222">Product manager</text><line x1="248" y1="152" x2="412" y2="152" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="180" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="205" font-size="13" fill="#222222">Operations staff</text><line x1="248" y1="200" x2="412" y2="200" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="228" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="253" font-size="13" fill="#222222">Domain specialist</text><line x1="248" y1="248" x2="412" y2="248" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="276" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="301" font-size="13" fill="#222222">Software engineer</text><line x1="248" y1="296" x2="412" y2="296" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="324" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="349" font-size="13" fill="#222222">QA and test engineer</text><line x1="248" y1="344" x2="412" y2="344" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="372" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="397" font-size="13" fill="#222222">Data scientist, ML engineer</text><line x1="248" y1="392" x2="412" y2="392" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="420" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="445" font-size="13" fill="#222222">Platform and SRE engineer</text><line x1="248" y1="440" x2="412" y2="440" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="468" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="493" font-size="13" fill="#222222">Security engineer</text><line x1="248" y1="488" x2="412" y2="488" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="516" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="541" font-size="13" fill="#222222">Risk and compliance</text><line x1="248" y1="536" x2="412" y2="536" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="28" y="564" width="220" height="40" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="589" font-size="13" fill="#222222">People manager</text><line x1="248" y1="584" x2="412" y2="584" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#a6)"/>
+      <rect x="412" y="84" width="320" height="88" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="428" y="125" font-size="13" font-weight="700" fill="#1F3864">Agent product owner</text><text x="428" y="141" fill="#44546A">Owns workflow outcomes, autonomy tier, metrics</text>
+      <rect x="412" y="180" width="320" height="88" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="428" y="221" font-size="13" font-weight="700" fill="#1F3864">Agent supervisor</text><text x="428" y="237" fill="#44546A">Handles exceptions, approves high-impact acts</text>
+      <rect x="412" y="276" width="320" height="136" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="428" y="341" font-size="13" font-weight="700" fill="#1F3864">Agent engineer</text><text x="428" y="357" fill="#44546A">Builds agents, tools, evals; QA becomes evals</text>
+      <rect x="412" y="420" width="320" height="88" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="428" y="461" font-size="13" font-weight="700" fill="#1F3864">AI platform and security architect</text><text x="428" y="477" fill="#44546A">Runtime, identity, sandboxes, tool registry</text>
+      <rect x="412" y="516" width="320" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="428" y="533" font-size="13" font-weight="700" fill="#1F3864">AI governance and assurance lead</text><text x="428" y="549" fill="#44546A">Policy, risk tiering, audit of agent actions</text>
+      <rect x="412" y="564" width="320" height="40" rx="2" fill="#E9EEF5" stroke="#1F3864" stroke-width="1.25"/><text x="428" y="581" font-size="13" font-weight="700" fill="#1F3864">Hybrid team lead</text><text x="428" y="597" fill="#44546A">Leads a small team of people plus their agents</text>
+      <text x="28" y="636" fill="#44546A">Largest workforce shift: operations staff and domain specialists move from doing the work to supervising it</text></svg>
+    <figcaption>Figure 16. Role convergence map: eleven roles today into six agent-era roles.</figcaption>
+  </figure>
+  <p><strong>Team shape changes too.</strong> McKinsey reports one product development function moving from pods of eight to ten people to hybrid teams of four to six people supported by agents, with teams owning outcomes across functional lines <a href="#ref2">[2]</a>. Org charts start to look like orchestration charts: who sets goals, which agents execute, where human judgment is required.</p>
+  <div class="table-scroll roles">
+    <table>
+      <thead><tr><th>From</th><th>To</th><th>What carries over</th><th>What is new</th></tr></thead>
+      <tbody>
+        <tr><td>Business analyst, product manager</td><td>Agent product owner</td><td>Process knowledge, stakeholder management</td><td>Writing agent goals and acceptance criteria, setting autonomy tiers, reading agent metrics</td></tr>
+        <tr><td>Operations staff, domain specialist</td><td>Agent supervisor</td><td>Judgment on edge cases, domain rules</td><td>Reviewing agent output at volume, approving actions, writing feedback that improves evals</td></tr>
+        <tr><td>Software engineer, data scientist</td><td>Agent engineer</td><td>Systems design, testing, data skills</td><td>Tool and MCP server design, context engineering, eval design, cost tuning</td></tr>
+        <tr><td>QA and test engineer</td><td>Agent engineer (evaluation)</td><td>Test design, regression discipline</td><td>Golden task sets, model graders, red-team suites</td></tr>
+        <tr><td>Platform, SRE, security engineer</td><td>AI platform and security architect</td><td>Infrastructure, identity, incident response</td><td>Workload identity for agents, sandboxing, MCP gateway, prompt injection defense</td></tr>
+        <tr><td>Risk and compliance</td><td>AI governance and assurance lead</td><td>Control frameworks, audit</td><td>Policy as code, continuous monitoring of agent decisions, AI regulation</td></tr>
+        <tr><td>People manager</td><td>Hybrid team lead</td><td>Coaching, prioritization</td><td>Allocating work between people and agents, managing agent performance and cost</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>How individuals move.</strong> Most people pass through three stages: <em>augment</em> (use agents for their own tasks), <em>supervise</em> (own the output of agents doing their former work), then <em>design</em> (shape the workflows and evals agents run on). Fund reskilling for each step, and make the supervise stage a real job with clear decision rights, not a rubber stamp.</p>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 212" role="img" aria-label="Individual transition path" font-family="Arial, Helvetica, sans-serif" font-size="11.5"><defs><marker id="s9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E75B6"/></marker></defs><text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">People move from doing the work, to supervising it, to designing it</text><rect x="28" y="52" width="208" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="42" y="76" font-size="13" font-weight="700" fill="#1F3864">1. Augment</text><text x="42" y="96" fill="#222222">Agents help with your</text><text x="42" y="112" fill="#222222">own tasks; you do the work</text><rect x="276" y="52" width="208" height="76" rx="2" fill="#D6E4F3" stroke="#2E75B6" stroke-width="2.5"/><text x="290" y="76" font-size="13" font-weight="700" fill="#1F3864">2. Supervise</text><text x="290" y="96" fill="#222222">Agents do your former work;</text><text x="290" y="112" fill="#222222">you own the output</text><rect x="524" y="52" width="208" height="76" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><text x="538" y="76" font-size="13" font-weight="700" fill="#1F3864">3. Design</text><text x="538" y="96" fill="#222222">You shape the workflows</text><text x="538" y="112" fill="#222222">and evals agents run on</text><path d="M236 90H276" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s9)"/><path d="M484 90H524" fill="none" stroke="#2E75B6" stroke-width="1.25" marker-end="url(#s9)"/><rect x="28" y="152" width="704" height="20" fill="#E9EEF5"/><polygon points="28,172 732,152 732,172" fill="#8FB3DA"/><text x="28" y="194" fill="#44546A">Share of the work done by agents rises at each stage</text><text x="732" y="194" font-size="11.5" font-weight="700" text-anchor="end" fill="#1F3864">Fund reskilling for every step</text></svg>
+    <figcaption>Figure 17. Individual transition path: augment, supervise, design. Stage 2 needs real decision rights, not a rubber stamp.</figcaption>
+  </figure>
+  <h3>Convergence patterns to plan for</h3>
+  <ul>
+    <li><strong>Product, design and engineering blur</strong> into small builder teams that specify, build and evaluate agent workflows together.</li>
+    <li><strong>QA becomes evaluation engineering</strong>, the quality gate for every model, prompt and tool change.</li>
+    <li><strong>Platform and security merge around identity</strong>: who an agent is and what it may do becomes the core platform question.</li>
+    <li><strong>Span of control widens</strong>: one supervisor can oversee far more work, so career paths must reward judgment and workflow design rather than headcount managed.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="metrics">
+  <h2>8. Metrics, pitfalls and a 90-day start</h2>
+  <h3>Measure outcomes, not usage</h3>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Metric</th><th>What it tells you</th></tr></thead>
+      <tbody>
+        <tr><td>Cycle time per workflow</td><td>Whether agents actually speed up the work</td></tr>
+        <tr><td>Autonomous completion rate</td><td>Share of tasks finished without human intervention</td></tr>
+        <tr><td>Escalation and override rate</td><td>Where agents are still unreliable or under-scoped</td></tr>
+        <tr><td>Error and incident rate</td><td>Quality and safety at the current autonomy tier</td></tr>
+        <tr><td>Cost per completed task</td><td>Unit economics versus the previous process</td></tr>
+        <tr><td>Employee time redeployed</td><td>Capacity moved to higher-value work</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Common pitfalls</h3>
+  <ul>
+    <li>Pilot sprawl: dozens of demos, none in production, no shared platform.</li>
+    <li>Automating a broken process instead of redesigning it.</li>
+    <li>Granting agents broad human credentials "to get started."</li>
+    <li>Onboarding third-party MCP servers and tools without supply-chain review.</li>
+    <li>Skipping evaluation, so nobody can say whether an agent is ready for more autonomy.</li>
+    <li>Treating it as an IT project rather than an operating-model change.</li>
+  </ul>
+  <h3>First 90 days</h3>
+  <figure>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 352" role="img" aria-label="Ninety days, three phases, three gates" font-family="Arial, Helvetica, sans-serif" font-size="11.5">
+      <text x="28" y="30" font-size="15" font-weight="700" fill="#1F3864">Ninety days, three phases, each ending in a go or no-go gate</text>
+      <rect x="28" y="64" width="224" height="156" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><line x1="42" y1="120" x2="238" y2="120" stroke="#C9D3E0"/><text x="42" y="90" font-size="13" font-weight="700" fill="#1F3864">Mobilize</text><text x="42" y="108" fill="#44546A">Days 1 to 30</text><text x="42" y="142" fill="#222222">Name sponsor and central team</text><text x="42" y="160" fill="#222222">Inventory and score workflows</text><text x="42" y="178" fill="#222222">Interim policy: identity, tools</text><text x="42" y="196" fill="#222222">Choose three lighthouses</text>
+      <rect x="268" y="64" width="224" height="156" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><line x1="282" y1="120" x2="478" y2="120" stroke="#C9D3E0"/><text x="282" y="90" font-size="13" font-weight="700" fill="#1F3864">Build and pilot</text><text x="282" y="108" fill="#44546A">Days 31 to 60</text><text x="282" y="142" fill="#222222">Platform MVP: identity, sandbox,</text><text x="282" y="160" fill="#222222">tool registry, tracing</text><text x="282" y="178" fill="#222222">Lighthouses live at Tier 2</text><text x="282" y="196" fill="#222222">Golden eval set per workflow</text>
+      <rect x="508" y="64" width="224" height="156" rx="2" fill="#fff" stroke="#1F3864" stroke-width="1.25"/><line x1="522" y1="120" x2="718" y2="120" stroke="#C9D3E0"/><text x="522" y="90" font-size="13" font-weight="700" fill="#1F3864">Prove and fund</text><text x="522" y="108" fill="#44546A">Days 61 to 90</text><text x="522" y="142" fill="#222222">Publish baseline metrics</text><text x="522" y="160" fill="#222222">Run a red-team exercise</text><text x="522" y="178" fill="#222222">Promote one workflow a tier</text><text x="522" y="196" fill="#222222">Fund the scale-out roadmap</text>
+      <line x1="28" y1="252" x2="732" y2="252" stroke="#2E75B6" stroke-width="1.25"/>
+      <path d="M260 242l10 10l-10 10l-10 -10z" fill="#E9EEF5" stroke="#2E75B6" stroke-width="1.25"/><text x="260" y="288" font-weight="700" text-anchor="middle" fill="#222222">Gate 1: day 30</text><text x="260" y="304" text-anchor="middle" fill="#44546A">Sponsor, team and</text><text x="260" y="320" text-anchor="middle" fill="#44546A">lighthouses chosen</text>
+      <path d="M500 242l10 10l-10 10l-10 -10z" fill="#E9EEF5" stroke="#2E75B6" stroke-width="1.25"/><text x="500" y="288" font-weight="700" text-anchor="middle" fill="#222222">Gate 2: day 60</text><text x="500" y="304" text-anchor="middle" fill="#44546A">Platform MVP live,</text><text x="500" y="320" text-anchor="middle" fill="#44546A">pilots running at Tier 2</text>
+      <path d="M722 242l10 10l-10 10l-10 -10z" fill="#2E75B6" stroke="#2E75B6" stroke-width="1.25"/><text x="736" y="288" font-weight="700" text-anchor="end" fill="#222222">Gate 3: day 90</text><text x="736" y="304" text-anchor="end" fill="#44546A">Metrics baseline set,</text><text x="736" y="320" text-anchor="end" fill="#44546A">scale-out funded</text>
+      </svg>
+    <figcaption>Figure 18. First 90 days: three phases, three gates.</figcaption>
+  </figure>
+  <p>Treat each gate as a real decision: if its criteria are not met, extend the phase rather than starting the next one.</p>
+</section>
+
+<!-- References -->
+<section id="references" class="refs">
+  <h2>References</h2>
+  <h3>Strategy and operating model</h3>
+  <ol>
+    <li id="ref1">McKinsey &amp; Company, <a href="https://www.mckinsey.com/capabilities/people-and-organization/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era">The agentic organization: Contours of the next paradigm for the AI era</a> (2025). Five pillars: business model, operating model, governance, workforce, technology and data.</li>
+    <li id="ref2">McKinsey &amp; Company, <a href="https://www.mckinsey.com/capabilities/people-and-organization/our-insights/ai-is-changing-work-now-it-has-to-change-the-organization">AI is changing work. Now it has to change the organization</a> (2026). Orchestration charts, hybrid human and agent teams, state of AI survey results.</li>
+    <li id="ref3">McKinsey &amp; Company, <a href="https://www.mckinsey.com/capabilities/people-and-organization/our-insights/the-organization-blog/six-shifts-to-build-the-agentic-organization-of-the-future">Six shifts to build the agentic organization of the future</a>.</li>
+    <li id="ref4">Gartner, <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027">Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027</a> (June 2025); see also <a href="https://www.rcrwireless.com/20250627/business/agentic-ai">RCR Wireless coverage</a> for the 2028 decision-autonomy forecast.</li>
+  </ol>
+  <h3>Building agents</h3>
+  <ol start="5">
+    <li id="ref5">Anthropic, <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a>. Workflows versus agents; start simple and add autonomy only when it pays.</li>
+    <li id="ref6">Anthropic, <a href="https://resources.anthropic.com/building-effective-ai-agents">Building Effective AI Agents: Architecture Patterns and Implementation Frameworks</a> (eBook).</li>
+    <li id="ref7"><a href="https://modelcontextprotocol.io/specification/latest">Model Context Protocol specification</a>. Open standard for connecting agents to tools and data, including its security and consent principles.</li>
+  </ol>
+  <h3>Security and risk</h3>
+  <ol start="8">
+    <li id="ref8">OWASP GenAI Security Project, <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-application">OWASP Top 10 for Agentic Applications for 2026</a> (December 2025). Includes agent goal hijack, tool misuse, identity and privilege abuse, agentic supply chain.</li>
+    <li id="ref9">NIST, <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a> and <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">Generative AI Profile, NIST AI 600-1</a> (July 2024).</li>
+    <li id="ref10">MITRE, <a href="https://atlas.mitre.org/">ATLAS: Adversarial Threat Landscape for AI Systems</a>.</li>
+    <li id="ref11"><a href="https://spiffe.io/">SPIFFE and SPIRE</a> workload identity standards, for per-agent identity.</li>
+  </ol>
+  <h3>Protocols and standards</h3>
+  <ol start="12">
+    <li id="ref12">MCP, <a href="https://modelcontextprotocol.io/specification/latest/basic/authorization">Authorization specification (2026-07-28)</a>. OAuth 2.1 profile, RFC 8707 resource indicators, RFC 9728 protected resource metadata, no token passthrough.</li>
+    <li id="ref13">IETF, <a href="https://www.rfc-editor.org/rfc/rfc8693">RFC 8693: OAuth 2.0 Token Exchange</a>. Delegation and the <code>act</code> claim for on-behalf-of tokens.</li>
+    <li id="ref14">Linux Foundation, <a href="https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year">A2A protocol surpasses 150 organizations in first year</a> (April 2026).</li>
+    <li id="ref15">OpenTelemetry, <a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md">Semantic conventions for GenAI agent and framework spans</a>.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Becoming an Agentic-AI-First Organization · November 21, 2026</div>
+</footer>
+
+</body>
+</html>
